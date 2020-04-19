@@ -1,6 +1,6 @@
 # loopback2-angular4
 
-### Setup
+## Setup
 
 Run the server:
 
@@ -15,6 +15,20 @@ $ cd client-src
 $ docker-compose up
 ```
 
-### License
+## Build
+
+Development mode:
+
+```sh
+$ docker-compose run --rm client-angular ng build
+```
+
+Production mode:
+
+```sh
+$ docker-compose run --rm client-angular ng build --prod
+```
+
+## License
 
 MIT
