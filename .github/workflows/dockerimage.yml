@@ -27,7 +27,7 @@ jobs:
         working-directory: ./client-src
 
       - name: Copy the dist
-        run: mv client-src/dist/ client/
+        run: sudo mv client-src/dist/ client/
 
       - name: Build the application image
         run: ls && mv dist client && docker build . --file Dockerfile --tag image
