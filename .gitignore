@@ -19,3 +19,4 @@ node_modules
 npm-debug.log
 client/src/app/sdk
 server/config.local.json
+my_secret.json
