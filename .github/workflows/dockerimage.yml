@@ -23,10 +23,11 @@ jobs:
         run: docker build ./client-src --file ./client-src/Dockerfile --tag angular-client
 
       - name: Build the source in development mode
-        run:  cd client-src && docker-compose run --rm client-angular ng build && ls
+        run: docker-compose run --rm client-angular ng build && cp -R dist/ ../client
+        working-directory: ./client-src
 
       - name: Build the application image
-        run: docker build . --file Dockerfile --tag image
+        run: ls client && docker build . --file Dockerfile --tag image
 
       - name: Log into registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
