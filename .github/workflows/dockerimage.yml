@@ -2,15 +2,15 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      - uses: actions/checkout@v2
+      - name: Build image
+        run: $ docker build -t docker.pkg.github.com/muhammadghazali/loopback2-angular4-seed/loopback2-angular4-seed:$(date +%s) .
+      - name: Tag image
+        run: docker tag IMAGE_ID docker.pkg.github.com/muhammadghazali/loopback2-angular4-seed/loopback2-angular4-seed:$(date +%s)
