@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build the Angular image
-        run: docker build . --file ./client-src/Dockerfile --tag angular-client
+        run: docker build client-src --file ./client-src/Dockerfile --tag angular-client
 
       - name: Build the source in development mode
         run: docker run --rm angular-client ng build && ls && ls client-src
