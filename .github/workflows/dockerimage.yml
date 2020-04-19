@@ -23,7 +23,7 @@ jobs:
         run: docker build ./client-src --file ./client-src/Dockerfile --tag angular-client
 
       - name: Build the source in development mode
-        run: docker-compose run --rm client-angular ng build
+        run: docker-compose -f ./client-src/docker-compose.yml run --rm client-angular ng build
 
       - name: Build the application image
         run: ls client && docker build . --file Dockerfile --tag image
