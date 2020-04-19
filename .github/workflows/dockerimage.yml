@@ -30,7 +30,7 @@ jobs:
         run: sudo mv client-src/dist/ client/
 
       - name: Build the application image
-        run: ls && mv dist client && docker build . --file Dockerfile --tag image
+        run: ls client && docker build . --file Dockerfile --tag image
 
       - name: Log into registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
