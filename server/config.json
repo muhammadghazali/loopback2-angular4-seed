@@ -19,5 +19,9 @@
     "cors": false,
     "handleErrors": false
   },
-  "legacyExplorer": false
+  "legacyExplorer": false,
+  "mailgun": {
+    "apiKey": "xxx",
+    "domain": "xxx.com"
+  }
 }
