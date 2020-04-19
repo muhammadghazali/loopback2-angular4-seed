@@ -23,7 +23,7 @@ jobs:
         run: docker build ./client-src --file ./client-src/Dockerfile --tag angular-client
 
       - name: Build the source in development mode
-        run: docker-compose run --rm client-angular ng build && cp -R dist/ ../client
+        run: docker-compose run --rm client-angular ng build && mv dist ../client
         working-directory: ./client-src
 
       - name: Build the application image
