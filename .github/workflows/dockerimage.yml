@@ -13,7 +13,7 @@ jobs:
       - name: Build image
         run: docker build -t docker.pkg.github.com/muhammadghazali/loopback2-angular4-seed/loopback2-angular4-seed:$(date +%s) .
       - name: Tag image
-        run: docker tag IMAGE_ID docker.pkg.github.com/muhammadghazali/loopback2-angular4-seed/loopback2-angular4-seed:$(date +%s)
+        run: docker tag docker.pkg.github.com/muhammadghazali/loopback2-angular4-seed/loopback2-angular4-seed:$(date +%s)
       - name: Publish image
         run: docker push docker.pkg.github.com/muhammadghazali/loopback2-angular4-seed/loopback2-angular4-seed:$(date +%s)
 
