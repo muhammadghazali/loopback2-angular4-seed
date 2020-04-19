@@ -14,4 +14,4 @@ jobs:
         with:
           name: docker.pkg.github.com/${{ github.actor }}/loopback2-angular4-seed/loopback2-angular4-seed
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ github.token }}
