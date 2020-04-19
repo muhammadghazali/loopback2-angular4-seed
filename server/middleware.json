@@ -41,7 +41,7 @@
   },
   "files": { "loopback#static": { "params": "$!../client/" } },
   "final": {
-    "loopback#urlNotFound": {}
+    "./middleware/custom404": {}
   },
   "final:after": {
     "strong-error-handler": {}
