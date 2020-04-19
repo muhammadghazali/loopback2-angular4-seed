@@ -10,10 +10,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Build image
-        run: docker build -t docker.pkg.github.com/muhammadghazali/loopback2-angular4-seed/loopback2-angular4-seed:$(date +%s) .
-      - name: Tag image
-        run: docker tag docker.pkg.github.com/muhammadghazali/loopback2-angular4-seed/loopback2-angular4-seed:$(date +%s)
-      - name: Publish image
-        run: docker push docker.pkg.github.com/muhammadghazali/loopback2-angular4-seed/loopback2-angular4-seed:$(date +%s)
-
+      name: Publish to Registry
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: docker.pkg.github.com/muhammadghazali/loopback2-angular4-seed/loopback2-angular4-seed
+        tag_semver: true
