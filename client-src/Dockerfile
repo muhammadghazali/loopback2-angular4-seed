@@ -1,14 +1,11 @@
-FROM node:6
+FROM node:10
 
 EXPOSE 4200
-
-RUN npm install -g @angular/cli@1.4.9
 
 WORKDIR /opt/app
 COPY package.json package-lock.json* ./
 RUN npm install --no-optional && npm cache clean --force
-ENV PATH /opt/app/.bin:$PATH
+ENV PATH /opt/app/node_modules/.bin:$PATH
 
 COPY . .
-
-CMD [ "npm", "start" ]
+CMD ["npm", "start"]
