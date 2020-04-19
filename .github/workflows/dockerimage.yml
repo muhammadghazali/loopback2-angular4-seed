@@ -8,9 +8,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Login to GitHub Repository
-        run: cat ~/GH_TOKEN.txt | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
-      - uses: actions/checkout@v2
+      - name: Checkout source
+        uses: actions/checkout@v2
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
