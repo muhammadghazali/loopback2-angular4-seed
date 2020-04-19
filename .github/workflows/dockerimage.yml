@@ -12,4 +12,6 @@ jobs:
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          name: docker.pkg.github.com/muhammadghazali/loopback2-angular4-seed/loopback2-angular4-seed
+          name: docker.pkg.github.com/${{ github.actor }}/loopback2-angular4-seed/loopback2-angular4-seed
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
